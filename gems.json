@@ -9,7 +9,7 @@
       "is_private": false,
       "work": "work",
       "tier": "essentials",
-      "icon": "🏗️",
+      "icon": "✨",
       "url": "https://gemini.google.com/gem/1ueZH9rwy6n-lGzN_CF_CiMk3qQPghFkh?usp=sharing"
     },
     {
@@ -32,8 +32,8 @@
       "category": "Utilities",
       "is_private": false,
       "work": "work",
-      "tier": "essentials",
-      "icon": "✨",
+      "tier": "toolkit",
+      "icon": "✏️​",
       "url": "https://gemini.google.com/gem/1PhhIcodJLEKTX5J221NdyyLIVMvo1dH8?usp=sharing"
     },
     {
@@ -68,7 +68,7 @@
       "category": "Leisure",
       "is_private": false,
       "work": "false",
-      "tier": "toolkit",
+      "tier": "miscellaneous",
       "icon": "🛍️",
       "url": "https://gemini.google.com/gem/1anqP6xfvmfZLcWqpaPSd8hO9EckiHxBy?usp=sharing"
     },
@@ -116,9 +116,57 @@
       "category": "Utilities",
       "is_private": false,
       "work": "work-only",
-      "tier": "essentials",
+      "tier": "toolkit",
       "icon": "🤝",
       "url": "https://gemini.google.com/gem/1amds4G6lu1kdgCyoaA6KgRdNHOQQGBhg?usp=sharing"
+    },
+    {
+      "id": "reply-laife-aio",
+      "name": "Reply Laife AIO",
+      "description": "Reply Laife AIO",
+      "file": "",
+      "category": "Utilities",
+      "is_private": false,
+      "work": "work-only",
+      "tier": "essentials",
+      "icon": "🏥",
+      "url": "https://gemini.google.com/gem/1jqM2ZzfXsf5tPTkmDI3zZNCPOkMmms9h?usp=sharing"
+    },
+    {
+      "id": "hegos",
+      "name": "HEgos",
+      "description": "HEgos",
+      "file": "",
+      "category": "Utilities",
+      "is_private": false,
+      "work": "work-only",
+      "tier": "essentials",
+      "icon": "🏥",
+      "url": "https://gemini.google.com/gem/1zzfhv2x1wWEvAhUV0oFGDGlwkf-5UoKC?usp=sharing"
+    },
+    {
+      "id": "smaf-ops-lead",
+      "name": "SMAF Ops Lead",
+      "description": "SMAF Ops Lead",
+      "file": "",
+      "category": "Utilities",
+      "is_private": false,
+      "work": "work-only",
+      "tier": "miscellaneous",
+      "icon": "🧠",
+      "url": "https://gemini.google.com/gem/1eyfJppwCPmE7mwOQVfzJacFX_NOBoiEe?usp=sharing"
+    },
+    {
+      "id": "smaf-coder",
+      "name": "SMAF Coder",
+      "description": "SMAF Coder",
+      "file": "",
+      "category": "Utilities",
+      "is_private": false,
+      "work": "work-only",
+      "tier": "miscellaneous",
+      "icon": "💻",
+      "url": "https://gemini.google.com/gem/1nYgGxhaYMOOPOo__D9DPK2-OdeTQ-DqL?usp=sharing"
     }
   ],
   "categories": [

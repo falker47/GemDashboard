@@ -1,82 +1,442 @@
 /* ============================================
    GEM DASHBOARD - Responsive Design
+   Mobile-First Optimizations
    ============================================ */
 
+/* ============================================
+   LARGE TABLETS & SMALL DESKTOPS (max-width: 1024px)
+   ============================================ */
 @media (max-width: 1024px) {
-    .brand h1 {
-        font-size: var(--font-size-lg);
-    }
-    
-    .filter-pill .pill-text {
-        display: none;
-    }
-    
-    .filter-pill {
-        padding: var(--space-sm);
-    }
-    
-    .pill-icon {
-        font-size: 1.125rem;
-    }
-    
-    #search-input {
-        width: 180px;
-    }
+  .brand h1 {
+    font-size: var(--font-size-lg);
+  }
+
+  .filter-pill .pill-text {
+    display: none;
+  }
+
+  .filter-pill {
+    padding: var(--space-sm);
+  }
+
+  .pill-icon {
+    font-size: 1.125rem;
+  }
+
+  #search-input {
+    width: 180px;
+  }
+
+  /* Smaller cards on tablets */
+  .tier-essentials .gem-card {
+    min-width: 260px;
+    max-width: 260px;
+  }
+
+  .tier-toolkit .gem-card {
+    min-width: 200px;
+    max-width: 200px;
+  }
+
+  .tier-miscellaneous .gem-card {
+    min-width: 220px;
+    max-width: 220px;
+  }
 }
 
+/* ============================================
+   TABLETS (max-width: 768px)
+   ============================================ */
 @media (max-width: 768px) {
-    .glass-bar {
-        flex-wrap: wrap;
-        height: auto;
-        padding: var(--space-md);
-        gap: var(--space-md);
-    }
-    
-    .brand {
-        width: 50%;
-    }
-    
-    .search-wrap {
-        order: 2;
-        width: 50%;
-    }
-    
-    #search-input {
-        width: 100%;
-    }
-    
-    .filters {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .filter-pill .pill-text {
-        display: inline;
-    }
-    
-    .content-grid {
-        padding: var(--space-md);
-        gap: var(--space-sm);
-    }
-    
-    .gem-card {
-        min-width: 240px;
-        max-width: 240px;
-    }
+  /* Header adjustments */
+  .glass-bar {
+    flex-wrap: wrap;
+    height: auto;
+    max-height: none; /* Allow header to grow */
+    padding: var(--space-md);
+    gap: var(--space-sm);
+  }
+
+  .brand {
+    order: 1;
+    flex: 1;
+  }
+
+  .header-right {
+    order: 2;
+    flex: 0 0 auto;
+  }
+
+  .search-wrap {
+    order: 4;
+    width: 100%;
+    margin-top: var(--space-xs);
+  }
+
+  #search-input {
+    width: 100%;
+  }
+
+  .filters {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    margin-top: var(--space-xs);
+  }
+
+  .filter-pill .pill-text {
+    display: inline;
+  }
+
+  /* Toggle label hidden on tablet */
+  .toggle-label {
+    display: none;
+  }
+
+  /* Content area - allow vertical scroll */
+  .content-grid {
+    padding: var(--space-md);
+    gap: var(--space-md);
+    height: auto;
+    min-height: calc(100vh - 200px); /* Adjusted for taller header */
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* Tier sections - stack vertically */
+  .tier {
+    flex: none;
+    min-height: auto;
+  }
+
+  .tier-essentials,
+  .tier-toolkit,
+  .tier-miscellaneous {
+    flex: none;
+    padding: var(--space-md);
+  }
+
+  /* Gem cards sizing */
+  .gem-card {
+    min-width: 220px;
+    max-width: 220px;
+  }
+
+  .tier-essentials .gem-card {
+    min-width: 240px;
+    max-width: 240px;
+  }
+
+  .tier-toolkit .gem-card {
+    min-width: 190px;
+    max-width: 190px;
+  }
+
+  .tier-miscellaneous .gem-card {
+    min-width: 200px;
+    max-width: 200px;
+  }
 }
 
+/* ============================================
+   MOBILE DEVICES (max-width: 480px)
+   ============================================ */
 @media (max-width: 480px) {
-    .brand h1 {
-        display: none;
-    }
-    
-    .filter-pill {
-        flex: 1;
-        justify-content: center;
-    }
-    
-    .filter-pill .pill-text {
-        display: none;
-    }
+  /* Header - 3 row layout:
+     Row 1: Brand (icon + title)
+     Row 2: Filters + Work Toggle
+     Row 3: Search bar
+  */
+  .glass-bar {
+    padding: var(--space-sm) var(--space-md);
+    gap: var(--space-sm);
+    align-items: center;
+  }
+
+  /* Row 1: Brand - full width, centered or left */
+  .brand {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+    flex: 0 0 100%;
+  }
+
+  .brand h1 {
+    display: inline; /* Show title on mobile */
+    font-size: var(--font-size-base);
+  }
+
+  .brand-icon {
+    font-size: 1.25rem;
+  }
+
+  /* Row 2: Filters + Work Toggle side by side */
+  .filters {
+    order: 2;
+    flex: 1;
+    gap: var(--space-xs);
+  }
+
+  .filter-pill {
+    flex: 1;
+    justify-content: center;
+    padding: var(--space-xs);
+    min-height: 40px;
+  }
+
+  .filter-pill .pill-text {
+    display: none;
+  }
+
+  .pill-icon {
+    font-size: 1.125rem;
+  }
+
+  .header-right {
+    order: 2;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .work-toggle {
+    flex-shrink: 0;
+  }
+
+  /* Hide search from header-right, we'll move it */
+  .header-right .search-wrap {
+    order: 3;
+    width: 100%;
+    flex: 0 0 100%;
+  }
+
+  /* Row 3: Search bar - full width */
+  .search-wrap {
+    order: 3;
+    width: 100%;
+    flex: 0 0 100%;
+  }
+
+  #search-input {
+    width: 100%;
+    font-size: var(--font-size-base);
+    padding: var(--space-sm) var(--space-md);
+    padding-left: 40px;
+    min-height: 44px;
+  }
+
+  /* Work toggle - compact */
+  .toggle-label {
+    display: none;
+  }
+
+  /* Work toggle - smaller */
+  .toggle-slider {
+    width: 40px;
+    height: 22px;
+  }
+
+  .toggle-slider::before {
+    width: 16px;
+    height: 16px;
+  }
+
+  .work-toggle input:checked + .toggle-slider::before {
+    left: calc(100% - 18px);
+  }
+
+  /* Content - full vertical scroll */
+  .content-grid {
+    padding: var(--space-sm);
+    gap: var(--space-md);
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* Tier sections */
+  .tier {
+    padding: var(--space-sm);
+  }
+
+  .tier-title {
+    font-size: var(--font-size-xs);
+    margin-bottom: var(--space-xs);
+  }
+
+  .tier-icon {
+    font-size: 0.875rem;
+  }
+
+  /* Gems row - horizontal scroll with snap */
+  .gems-row {
+    gap: var(--space-sm);
+    padding: var(--space-xs);
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* All gem cards - uniform sizing for mobile */
+  .gem-card,
+  .tier-essentials .gem-card,
+  .tier-toolkit .gem-card,
+  .tier-miscellaneous .gem-card {
+    min-width: 200px;
+    max-width: 200px;
+    scroll-snap-align: start;
+  }
+
+  /* Reset miscellaneous to column layout on mobile for readability */
+  .tier-miscellaneous .gem-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tier-miscellaneous .gem-footer {
+    margin-left: 0;
+    margin-top: auto;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  /* Gem card elements */
+  .gem-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.25rem;
+  }
+
+  .tier-essentials .gem-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .gem-name {
+    font-size: var(--font-size-sm);
+  }
+
+  .tier-essentials .gem-name {
+    font-size: var(--font-size-base);
+  }
+
+  .gem-description {
+    font-size: var(--font-size-xs);
+    -webkit-line-clamp: 2;
+  }
+
+  /* Larger touch targets for buttons */
+  .gem-copy-btn {
+    min-height: 36px;
+    min-width: 36px;
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  /* Toast positioning */
+  .toast {
+    bottom: var(--space-md);
+    left: var(--space-md);
+    right: var(--space-md);
+    transform: translateX(0);
+  }
+}
+
+/* ============================================
+   VERY SMALL DEVICES (max-width: 360px)
+   ============================================ */
+@media (max-width: 360px) {
+  .glass-bar {
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .content-grid {
+    padding: var(--space-xs);
+  }
+
+  /* Smaller cards for tiny screens */
+  .gem-card,
+  .tier-essentials .gem-card,
+  .tier-toolkit .gem-card,
+  .tier-miscellaneous .gem-card {
+    min-width: 170px;
+    max-width: 170px;
+    padding: var(--space-sm);
+  }
+
+  .gem-icon,
+  .tier-essentials .gem-icon,
+  .tier-toolkit .gem-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .gem-name,
+  .tier-essentials .gem-name {
+    font-size: var(--font-size-xs);
+  }
+
+  .filter-pill {
+    min-height: 40px;
+    padding: var(--space-xs);
+  }
+}
+
+/* ============================================
+   LANDSCAPE MOBILE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 768px) and (orientation: landscape) {
+  .glass-bar {
+    padding: var(--space-xs) var(--space-md);
+  }
+
+  .content-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    overflow-y: auto;
+  }
+
+  .tier {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+
+  .gems-row {
+    max-height: 150px;
+  }
+
+  .gem-card,
+  .tier-essentials .gem-card {
+    max-height: 120px;
+  }
+}
+
+/* ============================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects that don't work well on touch */
+  .gem-card:hover {
+    transform: none;
+  }
+
+  .gem-card:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+
+  .filter-pill:hover {
+    background: transparent;
+  }
+
+  .filter-pill:active {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Improve scrollbar visibility on touch */
+  .gems-row::-webkit-scrollbar {
+    height: 4px;
+  }
 }
