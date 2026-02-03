@@ -193,29 +193,28 @@
   }
 
   .header-right {
-    order: 2;
-    flex: 0 0 auto;
+    order: 3;
+    flex: 0 0 100%;
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: var(--space-sm);
+    margin-top: var(--space-sm);
   }
 
   .work-toggle {
     flex-shrink: 0;
   }
 
-  /* Hide search from header-right, we'll move it */
+  /* Search bar container */
   .header-right .search-wrap {
-    order: 3;
     width: 100%;
-    flex: 0 0 100%;
+    max-width: 100%;
   }
 
-  /* Row 3: Search bar - full width */
   .search-wrap {
-    order: 3;
     width: 100%;
-    flex: 0 0 100%;
   }
 
   #search-input {

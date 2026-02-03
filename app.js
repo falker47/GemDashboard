@@ -7,8 +7,7 @@
 const state = {
     gems: [],
     currentFilter: 'all',
-    searchQuery: '',
-    workModeActive: false
+    searchQuery: ''
 };
 
 // DOM Elements
@@ -21,7 +20,6 @@ const elements = {
     tierArchive: document.getElementById('tier-miscellaneous'),
     searchInput: document.getElementById('search-input'),
     filterPills: document.querySelectorAll('.filter-pill'),
-    workModeToggle: document.getElementById('work-mode-toggle'),
     toast: document.getElementById('toast')
 };
 
@@ -77,31 +75,38 @@ function renderGems() {
 }
 
 /**
- * Get filtered gems based on current filter, search query, and work mode
+ * Get filtered gems based on current filter and search query
  */
 function getFilteredGems() {
     return state.gems.filter(gem => {
         const workType = gem.work; // "work", "work-only", "false"
+        const isWorkCategory = state.currentFilter === 'work';
 
-        // Work Mode Active: Show "work" and "work-only", Hide "false"
-        if (state.workModeActive) {
+        // Filter Logic:
+        // 1. If Category is "Work": Show anything that has work value (work or work-only)
+        // 2. If Category is NOT "Work": Hide "work-only" items
+
+        // Work Category Check
+        if (isWorkCategory) {
             if (workType === "false") return false;
         }
-        // Work Mode Inactive: Show "work" and "false", Hide "work-only"
+        // Other Categories Check
         else {
             if (workType === "work-only") return false;
-        }
 
-        // Category filter
-        const categoryMatch = state.currentFilter === 'all' ||
-            gem.category.toLowerCase() === state.currentFilter.toLowerCase();
+            // Standard category match
+            const categoryMatch = state.currentFilter === 'all' ||
+                gem.category.toLowerCase() === state.currentFilter.toLowerCase();
+
+            if (!categoryMatch) return false;
+        }
 
         // Search filter
         const searchMatch = state.searchQuery === '' ||
             gem.name.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
             gem.description.toLowerCase().includes(state.searchQuery.toLowerCase());
 
-        return categoryMatch && searchMatch;
+        return searchMatch;
     });
 }
 
@@ -171,17 +176,17 @@ function setupEventListeners() {
         }
     });
 
-    // Work mode toggle
-    elements.workModeToggle.addEventListener('change', handleWorkModeToggle);
+    // Clear search on Escape
+    elements.searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            elements.searchInput.value = '';
+            state.searchQuery = '';
+            renderGems();
+        }
+    });
 }
 
-/**
- * Handle work mode toggle
- */
-function handleWorkModeToggle(e) {
-    state.workModeActive = e.target.checked;
-    renderGems();
-}
+
 
 /**
  * Setup click listeners for gem cards

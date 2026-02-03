@@ -172,6 +172,7 @@
   "categories": [
     { "id": "all", "name": "All", "icon": "✦" },
     { "id": "utilities", "name": "Utilities", "icon": "⚙️" },
-    { "id": "leisure", "name": "Leisure", "icon": "🎮" }
+    { "id": "leisure", "name": "Leisure", "icon": "🎮" },
+    { "id": "work", "name": "Work", "icon": "💼" }
   ]
 }
