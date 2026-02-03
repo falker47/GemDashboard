@@ -1,0 +1,105 @@
+/* ============================================
+   GEM DASHBOARD - Content Grid & Tiers
+   ============================================ */
+
+.content-grid {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    overflow: hidden; /* No vertical scroll */
+    height: calc(100vh - var(--header-height));
+}
+
+/* Tier Sections */
+.tier {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    transition: opacity var(--transition-normal);
+    overflow: hidden;
+    min-height: 0; /* Important for flex children */
+}
+
+.tier.hidden {
+    display: none;
+}
+
+/* Tier Height Distribution - Hero is biggest, Archive is smallest */
+.tier-essentials {
+    flex: 4.5; /* 45% of available space */
+    background: var(--gradient-hero), var(--glass-bg);
+    border-color: rgba(255, 107, 53, 0.2);
+}
+
+.tier-toolkit {
+    flex: 3.5; /* 35% of available space */
+    background: var(--gradient-processor), var(--glass-bg);
+    border-color: rgba(100, 149, 237, 0.15);
+}
+
+.tier-miscellaneous {
+    flex: 2.5; /* 25% of available space */
+    background: var(--gradient-archive), var(--glass-bg);
+    border-color: rgba(100, 100, 120, 0.15);
+}
+
+.tier-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-secondary);
+    flex-shrink: 0;
+}
+
+.tier-icon {
+    font-size: 1rem;
+}
+
+/* Gems Row - Horizontal Scroll */
+.gems-row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--space-md);
+    overflow-x: auto;
+    overflow-y: visible;
+    flex: 1;
+    align-items: flex-start;
+    padding-top: var(--space-sm); /* Space for hover effect */
+    padding-bottom: var(--space-sm); /* Space for scrollbar */
+}
+
+/* Horizontal Scrollbar Styling */
+.gems-row::-webkit-scrollbar {
+    height: 6px;
+}
+
+.gems-row::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 3px;
+}
+
+.gems-row::-webkit-scrollbar-thumb {
+    background: rgba(255, 165, 79, 0.3);
+    border-radius: 3px;
+}
+
+.gems-row::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 165, 79, 0.5);
+}
+
+/* Firefox scrollbar styling */
+.gems-row {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 165, 79, 0.3) rgba(255, 255, 255, 0.03);
+}

@@ -1,0 +1,74 @@
+/* ============================================
+   GEM DASHBOARD - Animated Background
+   ============================================ */
+
+.background-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: float 20s ease-in-out infinite;
+}
+
+.blob-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--color-magma-hot) 0%, transparent 70%);
+    top: -200px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--color-magma-glow) 0%, transparent 70%);
+    top: 50%;
+    right: -150px;
+    animation-delay: -5s;
+    animation-duration: 25s;
+}
+
+.blob-3 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--color-ember) 0%, transparent 70%);
+    bottom: -100px;
+    left: 30%;
+    animation-delay: -10s;
+    animation-duration: 22s;
+}
+
+.blob-4 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, #7b68ee 0%, transparent 70%);
+    top: 30%;
+    left: 50%;
+    opacity: 0.25;
+    animation-delay: -15s;
+    animation-duration: 28s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(50px, -30px) scale(1.05);
+    }
+    50% {
+        transform: translate(-20px, 40px) scale(0.95);
+    }
+    75% {
+        transform: translate(-40px, -20px) scale(1.02);
+    }
+}

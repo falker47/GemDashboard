@@ -1,0 +1,129 @@
+{
+  "gems": [
+    {
+      "id": "prompt-maker",
+      "name": "Prompt Maker",
+      "description": "Apex Cognitive Architecture Engineer - Transmute vague intent into executable System Instructions optimized for LLMs",
+      "file": "prompts/prompt-maker.txt",
+      "category": "Utilities",
+      "is_private": false,
+      "work": "work",
+      "tier": "essentials",
+      "icon": "🏗️",
+      "url": "https://gemini.google.com/gem/1ueZH9rwy6n-lGzN_CF_CiMk3qQPghFkh?usp=sharing"
+    },
+    {
+      "id": "stem-tutor",
+      "name": "STEM Tutor",
+      "description": "Advanced Pedagogical Co-Pilot for Math & Physics teachers - Create Socratic teaching roadmaps",
+      "file": "prompts/stem-tutor.txt",
+      "category": "Utilities",
+      "is_private": false,
+      "work": "false",
+      "tier": "miscellaneous",
+      "icon": "🧮",
+      "url": "https://gemini.google.com/gem/1qakAlGTJ7smZA_rNyg4z1qPg1ku_30se?usp=sharing"
+    },
+    {
+      "id": "text-refiner",
+      "name": "Text Refiner",
+      "description": "Markdown Architect & Code Sanitizer - Transform chaotic notes into structured documentation",
+      "file": "prompts/text-refiner.txt",
+      "category": "Utilities",
+      "is_private": false,
+      "work": "work",
+      "tier": "essentials",
+      "icon": "✨",
+      "url": "https://gemini.google.com/gem/1PhhIcodJLEKTX5J221NdyyLIVMvo1dH8?usp=sharing"
+    },
+    {
+      "id": "voice2chat",
+      "name": "Voice2Chat",
+      "description": "Digital Communications Editor - Convert messy ASR transcripts into perfect WhatsApp messages",
+      "file": "prompts/voice2chat.txt",
+      "category": "Utilities",
+      "is_private": false,
+      "work": "false",
+      "tier": "toolkit",
+      "icon": "💬",
+      "url": "https://gemini.google.com/gem/187v4KpOjZCTfAm7NB0BNgdg826jI5rMH?usp=sharing"
+    },
+    {
+      "id": "voice2notes",
+      "name": "Voice2Notes",
+      "description": "Executive Synthesis Engine - Transform raw audio transcripts into actionable documentation",
+      "file": "prompts/voice2notes.txt",
+      "category": "Utilities",
+      "is_private": false,
+      "work": "work",
+      "tier": "toolkit",
+      "icon": "📝",
+      "url": "https://gemini.google.com/gem/1nqowYjHW-fssoYTL1db9QskZ0fTlrJTP?usp=sharing"
+    },
+    {
+      "id": "vinted-assistant",
+      "name": "Vinted Pro",
+      "description": "Vinted Listing Specialist - Generate SEO-optimized, convertible listings from product images",
+      "file": "prompts/vinted-assistant.txt",
+      "category": "Leisure",
+      "is_private": false,
+      "work": "false",
+      "tier": "toolkit",
+      "icon": "🛍️",
+      "url": "https://gemini.google.com/gem/1anqP6xfvmfZLcWqpaPSd8hO9EckiHxBy?usp=sharing"
+    },
+    {
+      "id": "paarthurnax",
+      "name": "Paarthurnax",
+      "description": "Master of the Greybeards - Philosophical dialogue in Archaic Italian with Dovahzul",
+      "file": "prompts/paarthurnax.txt",
+      "category": "Leisure",
+      "is_private": false,
+      "work": "false",
+      "tier": "essentials",
+      "icon": "🐉",
+      "url": "https://gemini.google.com/gem/190K6ZhM3arUpLf-dIk6_kt690b9ami8p?usp=sharing"
+    },
+    {
+      "id": "oblivion-guide",
+      "name": "Oblivion Guide",
+      "description": "Arcane Mentor for Skyrim veterans playing Oblivion - Bridge mechanic gaps between TES IV & V",
+      "file": "prompts/oblivion-guide.txt",
+      "category": "Leisure",
+      "is_private": false,
+      "work": "false",
+      "tier": "miscellaneous",
+      "icon": "⚔️",
+      "url": "https://gemini.google.com/gem/1hrjj0UVQpSCNUo1wIqpWOqyknS0GN77b?usp=sharing"
+    },
+    {
+      "id": "urag-gro-shub",
+      "name": "Skyrim Guide",
+      "description": "Skyrim knowledge with UESP authority powered by Urag gro-Shub",
+      "file": "prompts/urag-gro-shub.txt",
+      "category": "Leisure",
+      "is_private": false,
+      "work": "false",
+      "tier": "miscellaneous",
+      "icon": "📚",
+      "url": "https://gemini.google.com/gem/1dcqIDuChucUAegUfWiS5A8b2o_JuUeO7?usp=sharing"
+    },
+    {
+      "id": "trascrizione-riunioni",
+      "name": "Meeting Transcriber",
+      "description": "Senior Technical Analyst & Scribe - Transmute raw meeting transcripts into structured Markdown",
+      "file": "prompts/trascrizione-riunioni.txt",
+      "category": "Utilities",
+      "is_private": false,
+      "work": "work-only",
+      "tier": "essentials",
+      "icon": "🤝",
+      "url": "https://gemini.google.com/gem/1amds4G6lu1kdgCyoaA6KgRdNHOQQGBhg?usp=sharing"
+    }
+  ],
+  "categories": [
+    { "id": "all", "name": "All", "icon": "✦" },
+    { "id": "utilities", "name": "Utilities", "icon": "⚙️" },
+    { "id": "leisure", "name": "Leisure", "icon": "🎮" }
+  ]
+}

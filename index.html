@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gem Dashboard - A collection of AI prompts and gems for various use cases">
+    <title>Gem Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background Blobs -->
+    <div class="background-layer">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="app-container">
+        <!-- Header / Glass Bar -->
+        <header class="glass-bar">
+            <div class="brand">
+                <span class="brand-icon">💎</span>
+                <h1>Gem Dashboard</h1>
+            </div>
+            
+            <nav class="filters">
+                <button class="filter-pill active" data-category="all">
+                    <span class="pill-icon">✦</span>
+                    <span class="pill-text">All</span>
+                </button>
+                <button class="filter-pill" data-category="utilities">
+                    <span class="pill-icon">⚙️</span>
+                    <span class="pill-text">Utilities</span>
+                </button>
+                <button class="filter-pill" data-category="leisure">
+                    <span class="pill-icon">🎮</span>
+                    <span class="pill-text">Leisure</span>
+                </button>
+            </nav>
+
+            <div class="header-right">
+                <label class="work-toggle" title="Show only work gems">
+                    <input type="checkbox" id="work-mode-toggle">
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-label">Work Mode</span>
+                </label>
+                
+                <div class="search-wrap">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </svg>
+                    <input type="search" id="search-input" placeholder="Search gems..." autocomplete="off">
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content-grid">
+            <!-- Essentials Tier -->
+            <section class="tier tier-essentials" id="tier-essentials">
+                <h2 class="tier-title">
+                    <span class="tier-icon">💎</span>
+                    Essentials
+                </h2>
+                <div class="gems-row" id="essentials-gems"></div>
+            </section>
+
+            <!-- Toolkit Tier -->
+            <section class="tier tier-toolkit" id="tier-toolkit">
+                <h2 class="tier-title">
+                    <span class="tier-icon">🔧</span>
+                    Toolkit
+                </h2>
+                <div class="gems-row" id="toolkit-gems"></div>
+            </section>
+
+            <!-- Miscellaneous Tier -->
+            <section class="tier tier-miscellaneous" id="tier-miscellaneous">
+                <h2 class="tier-title">
+                    <span class="tier-icon">📁</span>
+                    Miscellaneous
+                </h2>
+                <div class="gems-row" id="miscellaneous-gems"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✓</span>
+        <span class="toast-message">Copied to clipboard!</span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

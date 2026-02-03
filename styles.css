@@ -1,0 +1,28 @@
+/* ============================================
+   GEM DASHBOARD - Electric Magma Aesthetic
+   Main CSS Entry Point - Imports all modules
+   ============================================ */
+
+/* 1. Design Tokens & Variables */
+@import url('css/variables.css');
+
+/* 2. Reset & Base Styles */
+@import url('css/base.css');
+
+/* 3. Animated Background */
+@import url('css/background.css');
+
+/* 4. Header (Glass Bar) */
+@import url('css/header.css');
+
+/* 5. Content Grid & Tiers */
+@import url('css/grid.css');
+
+/* 6. Gem Cards */
+@import url('css/cards.css');
+
+/* 7. Components (Toast, Empty State) */
+@import url('css/components.css');
+
+/* 8. Responsive Design */
+@import url('css/responsive.css');

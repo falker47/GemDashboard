@@ -1,0 +1,82 @@
+/* ============================================
+   GEM DASHBOARD - Responsive Design
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .brand h1 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .filter-pill .pill-text {
+        display: none;
+    }
+    
+    .filter-pill {
+        padding: var(--space-sm);
+    }
+    
+    .pill-icon {
+        font-size: 1.125rem;
+    }
+    
+    #search-input {
+        width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .glass-bar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: var(--space-md);
+        gap: var(--space-md);
+    }
+    
+    .brand {
+        width: 50%;
+    }
+    
+    .search-wrap {
+        order: 2;
+        width: 50%;
+    }
+    
+    #search-input {
+        width: 100%;
+    }
+    
+    .filters {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .filter-pill .pill-text {
+        display: inline;
+    }
+    
+    .content-grid {
+        padding: var(--space-md);
+        gap: var(--space-sm);
+    }
+    
+    .gem-card {
+        min-width: 240px;
+        max-width: 240px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand h1 {
+        display: none;
+    }
+    
+    .filter-pill {
+        flex: 1;
+        justify-content: center;
+    }
+    
+    .filter-pill .pill-text {
+        display: none;
+    }
+}

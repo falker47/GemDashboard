@@ -1,0 +1,261 @@
+/* ============================================
+   GEM DASHBOARD - Gem Cards
+   ============================================ */
+
+/* Base Gem Card */
+.gem-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    min-width: 280px;
+    max-width: 280px;
+    height: 100%;
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-card);
+    border: 1px solid var(--glass-border);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.gem-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: var(--gradient-magma);
+    transition: opacity var(--transition-normal);
+    z-index: 0;
+}
+
+.gem-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 165, 79, 0.3);
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(255, 107, 53, 0.15);
+}
+
+.gem-card:hover::before {
+    opacity: 0.05;
+}
+
+.gem-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Private Badge */
+.gem-card.private::after {
+    content: '🔒';
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    font-size: 0.875rem;
+    opacity: 0.7;
+}
+
+.gem-card.private {
+    border-color: rgba(255, 193, 7, 0.2);
+}
+
+/* Card Header */
+.gem-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.gem-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 165, 79, 0.1);
+    border-radius: var(--radius-sm);
+}
+
+.gem-name {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Card Description */
+.gem-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Card Footer */
+.gem-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: var(--space-sm);
+}
+
+.gem-category {
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    padding: var(--space-xs) var(--space-sm);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-sm);
+}
+
+.gem-copy-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-xs) var(--space-sm);
+    border: none;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 165, 79, 0.15);
+    color: var(--color-magma-glow);
+    font-family: var(--font-family);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.gem-copy-btn:hover {
+    background: var(--gradient-magma);
+    color: #000;
+}
+
+.gem-copy-btn svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* ============================================
+   TIER-SPECIFIC GEM CARD STYLES
+   ============================================ */
+
+/* Essentials Tier - Full cards with description */
+.tier-essentials .gems-row {
+    align-items: stretch;
+}
+
+.tier-essentials .gem-card {
+    min-width: 300px;
+    max-width: 300px;
+}
+
+.tier-essentials .gem-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.75rem;
+}
+
+.tier-essentials .gem-name {
+    font-size: var(--font-size-lg);
+}
+
+.tier-essentials .gem-description {
+    -webkit-line-clamp: 3;
+}
+
+/* Toolkit Tier - Compact medium cards */
+.tier-toolkit .gems-row {
+    align-items: stretch;
+}
+
+.tier-toolkit .gem-card {
+    min-width: 220px;
+    max-width: 220px;
+    padding: var(--space-sm) var(--space-md);
+}
+
+.tier-toolkit .gem-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.25rem;
+}
+
+.tier-toolkit .gem-name {
+    font-size: var(--font-size-sm);
+}
+
+.tier-toolkit .gem-description {
+    display: none; /* Hide description for compact view */
+}
+
+.tier-toolkit .gem-footer {
+    margin-top: auto;
+    padding-top: var(--space-xs);
+}
+
+.tier-toolkit .gem-category {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+}
+
+/* Miscellaneous Tier - Compact cards */
+.tier-miscellaneous .gems-row {
+    align-items: stretch;
+}
+
+.tier-miscellaneous .gem-card {
+    min-width: 240px;
+    max-width: 240px;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+}
+
+.tier-miscellaneous .gem-header {
+    flex-shrink: 0;
+}
+
+.tier-miscellaneous .gem-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1.25rem;
+}
+
+.tier-miscellaneous .gem-name {
+    font-size: var(--font-size-sm);
+}
+
+.tier-miscellaneous .gem-description {
+    display: none; /* Hide description in compact view */
+}
+
+.tier-miscellaneous .gem-footer {
+    margin-top: 0;
+    padding-top: 0;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.tier-miscellaneous .gem-category {
+    display: none; /* Hide category badge in compact view */
+}
+
+.tier-miscellaneous .gem-copy-btn {
+    padding: var(--space-xs);
+}
+
+.tier-miscellaneous .gem-copy-btn span {
+    display: none; /* Hide "Copy" text, keep icon */
+}

@@ -1,0 +1,53 @@
+/* ============================================
+   GEM DASHBOARD - Components (Toast, Empty State)
+   ============================================ */
+
+/* Empty State */
+.empty-state {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    color: var(--color-text-muted);
+    text-align: center;
+    height: 100%;
+    min-width: 200px;
+}
+
+.empty-state-icon {
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-lg);
+    background: var(--gradient-magma);
+    color: #000;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    box-shadow: 0 10px 40px rgba(255, 107, 53, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--transition-normal);
+    z-index: 1000;
+}
+
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.toast-icon {
+    font-size: 1rem;
+}
