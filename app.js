@@ -129,7 +129,6 @@ function renderGemCards(gems) {
                 <div class="gem-icon">${gem.icon}</div>
                 <h3 class="gem-name">${gem.name}</h3>
             </div>
-            <p class="gem-description">${gem.description}</p>
             <div class="gem-footer">
                 <span class="gem-category">${gem.category}</span>
                 ${gem.file ? `<button class="gem-copy-btn" data-file="${gem.file}" title="Copy prompt to clipboard">
