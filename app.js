@@ -123,8 +123,10 @@ function renderGemCards(gems) {
         `;
     }
 
-    return gems.map(gem => `
-        <article class="gem-card${gem.is_private ? ' private' : ''}" data-file="${gem.file}" data-id="${gem.id}" data-url="${gem.url || ''}">
+    return gems.map(gem => {
+        const categoryClass = 'category-' + gem.category.toLowerCase().replace(/[^a-z0-9]/g, '-');
+        return `
+        <article class="gem-card ${categoryClass}${gem.is_private ? ' private' : ''}" data-file="${gem.file}" data-id="${gem.id}" data-url="${gem.url || ''}">
             <div class="gem-header">
                 <div class="gem-icon">${gem.icon}</div>
                 <h3 class="gem-name">${gem.name}</h3>
@@ -140,7 +142,8 @@ function renderGemCards(gems) {
                 </button>` : ''}
             </div>
         </article>
-    `).join('');
+    `;
+    }).join('');
 }
 
 /**

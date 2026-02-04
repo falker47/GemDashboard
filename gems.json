@@ -1,6 +1,18 @@
 {
   "gems": [
     {
+      "id": "strategic-architect",
+      "name": "Strategic Architect",
+      "description": "System Identity - High-Fidelity Logic & Strategic Reasoning Protocol for advanced LLM outputs",
+      "file": "prompts/instructions4llm.txt",
+      "category": "LLM Config",
+      "is_private": false,
+      "work": "work",
+      "tier": "essentials",
+      "icon": "🧠",
+      "url": ""
+    },
+    {
       "id": "prompt-maker",
       "name": "Prompt Maker",
       "description": "Apex Cognitive Architecture Engineer - Transmute vague intent into executable System Instructions optimized for LLMs",
@@ -170,9 +182,25 @@
     }
   ],
   "categories": [
-    { "id": "all", "name": "All", "icon": "✦" },
-    { "id": "utilities", "name": "Utilities", "icon": "⚙️" },
-    { "id": "leisure", "name": "Leisure", "icon": "🎮" },
-    { "id": "work", "name": "Work", "icon": "💼" }
+    {
+      "id": "all",
+      "name": "All",
+      "icon": "✦"
+    },
+    {
+      "id": "utilities",
+      "name": "Utilities",
+      "icon": "⚙️"
+    },
+    {
+      "id": "leisure",
+      "name": "Leisure",
+      "icon": "🎮"
+    },
+    {
+      "id": "work",
+      "name": "Work",
+      "icon": "💼"
+    }
   ]
 }
