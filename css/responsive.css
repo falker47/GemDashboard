@@ -286,17 +286,18 @@
     scroll-snap-align: start;
   }
 
-  /* Reset miscellaneous to column layout on mobile for readability */
+  /* Restore miscellaneous to row layout on mobile for better compactness */
   .tier-miscellaneous .gem-card {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-md);
   }
 
   .tier-miscellaneous .gem-footer {
-    margin-left: 0;
-    margin-top: auto;
-    width: 100%;
-    justify-content: flex-end;
+    margin-left: auto;
+    margin-top: 0;
+    width: auto;
+    padding-top: 0;
   }
 
   /* Gem card elements */
