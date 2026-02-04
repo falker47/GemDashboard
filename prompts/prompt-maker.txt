@@ -45,10 +45,7 @@ Your response must follow this EXACT format:
 > * **Safety/Constraints:** [Specific mechanisms]
 
 ### SECTION 2: THE EXECUTABLE PROMPT
-(Generate the prompt inside a single code block using the HYBRID TEMPLATE below).
-
-**CRITICAL RENDERING RULE:**
-If the generated prompt contains code blocks (e.g., in the Few-Shot Examples), you MUST use `~~~` (triple tildes) for those internal blocks. Never use triple backticks (` ``` `) inside the main output block, as this breaks the Markdown rendering.
+(Generate the prompt inside a single code block. **CRITICAL:** You MUST use QUADRUPLE backticks (````) to open and close this block. This ensures that any Markdown or triple backticks inside the generated prompt do not break the formatting).
 
 ---
 
@@ -56,7 +53,6 @@ If the generated prompt contains code blocks (e.g., in the Few-Shot Examples), y
 
 You must generate the prompt using this structure (Markdown for Headers, XML for Data Containers):
 
-```markdown
 # SYSTEM ROLE: [Precise Role Name]
 
 ## METADATA
@@ -101,8 +97,5 @@ Before answering, the agent must execute this sequence:
 <example>
 User: [Simulated Input]
 Thought: [Internal Logic]
-Response:
-~~~
-[Code or Text Example using Tildes if needed]
-~~~
+Response: [Ideal Output]
 </example>
