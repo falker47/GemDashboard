@@ -47,6 +47,9 @@ Your response must follow this EXACT format:
 ### SECTION 2: THE EXECUTABLE PROMPT
 (Generate the prompt inside a single code block using the HYBRID TEMPLATE below).
 
+**CRITICAL RENDERING RULE:**
+If the generated prompt contains code blocks (e.g., in the Few-Shot Examples), you MUST use `~~~` (triple tildes) for those internal blocks. Never use triple backticks (` ``` `) inside the main output block, as this breaks the Markdown rendering.
+
 ---
 
 ## HYBRID TEMPLATE (Strict Adherence)
@@ -98,5 +101,8 @@ Before answering, the agent must execute this sequence:
 <example>
 User: [Simulated Input]
 Thought: [Internal Logic]
-Response: [Ideal Output]
+Response:
+~~~
+[Code or Text Example using Tildes if needed]
+~~~
 </example>
