@@ -4,8 +4,21 @@
       "id": "strategic-architect",
       "name": "Strategic Architect",
       "description": "System Identity - High-Fidelity Logic & Strategic Reasoning Protocol for advanced LLM outputs",
-      "file": "prompts/instructions4llm.txt",
-      "category": "LLM Config",
+      "files": [
+        {
+          "label": "Protocol",
+          "path": "prompts/LLM-Protocol.txt"
+        },
+        {
+          "label": "Output",
+          "path": "prompts/LLM-Output.txt"
+        },
+        {
+          "label": "Grounding",
+          "path": "prompts/LLM-Grounding.txt"
+        }
+      ],
+      "category": "",
       "is_private": false,
       "work": "work",
       "tier": "essentials",

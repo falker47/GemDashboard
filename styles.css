@@ -24,5 +24,8 @@
 /* 7. Components (Toast, Empty State) */
 @import url('css/components.css');
 
-/* 8. Responsive Design */
+/* 8. Footer */
+@import url('css/footer.css');
+
+/* 9. Responsive Design */
 @import url('css/responsive.css');

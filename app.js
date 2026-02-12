@@ -20,7 +20,8 @@ const elements = {
     tierArchive: document.getElementById('tier-miscellaneous'),
     searchInput: document.getElementById('search-input'),
     filterPills: document.querySelectorAll('.filter-pill'),
-    toast: document.getElementById('toast')
+    toast: document.getElementById('toast'),
+    copyright: document.getElementById('current-copyright')
 };
 
 /**
@@ -31,9 +32,20 @@ async function init() {
         await loadGems();
         renderGems();
         setupEventListeners();
+        updateCopyrightYear();
     } catch (error) {
         console.error('Failed to initialize dashboard:', error);
         showError('Failed to load gems. Please refresh the page.');
+    }
+}
+
+/**
+ * Update the copyright year in the footer
+ */
+function updateCopyrightYear() {
+    if (elements.copyright) {
+        const year = new Date().getFullYear();
+        elements.copyright.textContent = `© ${year} Maurizio Falconi - falker47`;
     }
 }
 
@@ -124,22 +136,39 @@ function renderGemCards(gems) {
     }
 
     return gems.map(gem => {
-        const categoryClass = 'category-' + gem.category.toLowerCase().replace(/[^a-z0-9]/g, '-');
+        const categoryClass = gem.category ? 'category-' + gem.category.toLowerCase().replace(/[^a-z0-9]/g, '-') : '';
+        const copySvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>`;
+
+        // Build footer buttons
+        let footerButtons = '';
+        if (gem.files && gem.files.length > 0) {
+            // Multiple copy buttons
+            footerButtons = `<div class="gem-btn-group">
+                ${gem.files.map(f => `<button class="gem-copy-btn" data-file="${f.path}" title="Copy ${f.label}">
+                    ${copySvg}
+                    <span>${f.label}</span>
+                </button>`).join('')}
+            </div>`;
+        } else if (gem.file) {
+            // Single copy button
+            footerButtons = `<button class="gem-copy-btn" data-file="${gem.file}" title="Copy prompt to clipboard">
+                    ${copySvg}
+                    <span>Copy</span>
+                </button>`;
+        }
+
         return `
-        <article class="gem-card ${categoryClass}${gem.is_private ? ' private' : ''}" data-file="${gem.file}" data-id="${gem.id}" data-url="${gem.url || ''}">
+        <article class="gem-card ${categoryClass}${gem.is_private ? ' private' : ''}" data-file="${gem.file || ''}" data-id="${gem.id}" data-url="${gem.url || ''}">
             <div class="gem-header">
                 <div class="gem-icon">${gem.icon}</div>
                 <h3 class="gem-name">${gem.name}</h3>
             </div>
             <div class="gem-footer">
-                <span class="gem-category">${gem.category}</span>
-                ${gem.file ? `<button class="gem-copy-btn" data-file="${gem.file}" title="Copy prompt to clipboard">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                    </svg>
-                    <span>Copy</span>
-                </button>` : ''}
+                ${gem.category ? `<span class="gem-category">${gem.category}</span>` : ''}
+                ${footerButtons}
             </div>
         </article>
     `;

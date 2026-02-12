@@ -136,6 +136,7 @@
 .gem-copy-btn svg {
     width: 14px;
     height: 14px;
+    flex-shrink: 0;
 }
 
 /* ============================================
@@ -243,29 +244,43 @@
     display: none;
     /* Hide "Copy" text, keep icon */
 }
-/* Special styling for LLM Config cards */
-.gem-card.category-llm-config {
+
+/* Multi-button group */
+.gem-btn-group {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.gem-btn-group .gem-copy-btn {
+    flex: 1;
+    justify-content: center;
+    min-width: 0;
+    padding-left: var(--space-xs);
+    padding-right: var(--space-xs);
+    white-space: nowrap;
+}
+
+/* Special styling for Strategic Architect card */
+.gem-card[data-id="strategic-architect"] {
     border-color: rgba(0, 255, 255, 0.4);
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
     background: linear-gradient(145deg, rgba(0, 20, 40, 0.6), rgba(0, 10, 20, 0.8));
 }
 
-.gem-card.category-llm-config:hover {
+.gem-card[data-id="strategic-architect"]:hover {
     border-color: rgba(0, 255, 255, 0.8);
     box-shadow: 0 0 25px rgba(0, 255, 255, 0.25), inset 0 0 10px rgba(0, 255, 255, 0.05);
     transform: translateY(-4px) scale(1.01);
 }
 
-.gem-card.category-llm-config .gem-icon {
+.gem-card[data-id="strategic-architect"] .gem-icon {
     background: rgba(0, 255, 255, 0.15);
     color: #fff;
     text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
-.gem-card.category-llm-config .gem-category {
-    background: rgba(0, 255, 255, 0.15);
-    color: #0ff;
-    border: 1px solid rgba(0, 255, 255, 0.2);
-    font-weight: 700;
+.gem-card[data-id="strategic-architect"] .gem-footer {
+    justify-content: center;
 }
-

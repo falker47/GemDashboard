@@ -8,8 +8,9 @@
     flex-direction: column;
     gap: var(--space-md);
     padding: var(--space-lg);
-    overflow: hidden; /* No vertical scroll */
-    height: calc(100vh - var(--header-height));
+    overflow: hidden;
+    /* No vertical scroll */
+    height: calc(100vh - var(--header-height) - var(--footer-height));
 }
 
 /* Tier Sections */
@@ -23,7 +24,8 @@
     border: 1px solid var(--glass-border);
     transition: opacity var(--transition-normal);
     overflow: hidden;
-    min-height: 0; /* Important for flex children */
+    min-height: 0;
+    /* Important for flex children */
 }
 
 .tier.hidden {
@@ -31,20 +33,26 @@
 }
 
 /* Tier Height Distribution - Hero is biggest, Archive is smallest */
+/* Reduced by half footer height each (X = Y = footer-height / 2) */
 .tier-essentials {
-    flex: 4.5; /* 45% of available space */
+    flex: 4.5;
+    /* 45% of available space */
+    height: calc((100% / 10.5 * 4.5) - (var(--footer-height) / 2));
     background: var(--gradient-hero), var(--glass-bg);
     border-color: rgba(255, 107, 53, 0.2);
 }
 
 .tier-toolkit {
-    flex: 3.5; /* 35% of available space */
+    flex: 3.5;
+    /* 35% of available space */
+    height: calc((100% / 10.5 * 3.5) - (var(--footer-height) / 2));
     background: var(--gradient-processor), var(--glass-bg);
     border-color: rgba(100, 149, 237, 0.15);
 }
 
 .tier-miscellaneous {
-    flex: 2.5; /* 25% of available space */
+    flex: 2.5;
+    /* 25% of available space */
     background: var(--gradient-archive), var(--glass-bg);
     border-color: rgba(100, 100, 120, 0.15);
 }
@@ -75,8 +83,10 @@
     overflow-y: visible;
     flex: 1;
     align-items: flex-start;
-    padding-top: var(--space-sm); /* Space for hover effect */
-    padding-bottom: var(--space-sm); /* Space for scrollbar */
+    padding-top: var(--space-sm);
+    /* Space for hover effect */
+    padding-bottom: var(--space-sm);
+    /* Space for scrollbar */
 }
 
 /* Horizontal Scrollbar Styling */

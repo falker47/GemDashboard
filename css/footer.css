@@ -1,0 +1,33 @@
+/* ============================================
+   GEM DASHBOARD - Footer
+   ============================================ */
+
+.glass-footer {
+    height: var(--footer-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    border-top: 1px solid var(--glass-border);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+    z-index: 10;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.footer-content a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-fast);
+}
+
+.footer-content a:hover {
+    color: var(--color-magma-hot);
+}
