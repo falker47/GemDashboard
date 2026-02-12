@@ -209,13 +209,36 @@ function setupCardListeners() {
             const url = card.dataset.url;
 
             if (url && url !== "") {
-                window.open(url, '_blank');
+                openGeminiLink(url);
             } else {
                 copyPromptToClipboard(file);
             }
         });
     });
 }
+
+/**
+ * Open Gemini link, forcing app on Android if possible
+ * @param {string} url - The URL to open
+ */
+function openGeminiLink(url) {
+    const isAndroid = /Android/i.test(navigator.userAgent);
+
+    if (isAndroid) {
+        // Remove https:// schema for the intent parsing
+        const cleanUrl = url.replace(/^https?:\/\//, '');
+
+        // Construct Intent URI for Android
+        // package=com.google.android.apps.bard maps to the Gemini app
+        const intentUrl = `intent://${cleanUrl}#Intent;scheme=https;package=com.google.android.apps.bard;S.browser_fallback_url=${encodeURIComponent(url)};end`;
+
+        window.location.href = intentUrl;
+    } else {
+        // Default behavior for iOS/Desktop
+        window.open(url, '_blank');
+    }
+}
+
 
 /**
  * Handle filter pill click
