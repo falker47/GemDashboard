@@ -151,6 +151,7 @@
 .tier-essentials .gem-card {
     min-width: 300px;
     max-width: 300px;
+    padding-bottom: var(--space-xl); /* Increased to 32px */
 }
 
 .tier-essentials .gem-icon {
@@ -171,7 +172,7 @@
 .tier-toolkit .gem-card {
     min-width: 220px;
     max-width: 220px;
-    padding: var(--space-sm) var(--space-md);
+    padding: var(--space-sm) var(--space-md) var(--space-lg); /* Bottom increased to 24px */
 }
 
 .tier-toolkit .gem-icon {

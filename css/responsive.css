@@ -286,6 +286,7 @@
     height: auto;
     scroll-snap-align: start;
     padding: var(--space-sm);
+    gap: 4px; /* Explicit small gap */
   }
 
   .tier-essentials .gem-card {
@@ -293,7 +294,7 @@
   }
 
   .tier-toolkit .gem-card {
-    padding: 4px 12px;
+    padding: 12px;
   }
   /* Restore miscellaneous to row layout on mobile for better compactness */
   .tier-miscellaneous .gem-card {
@@ -302,11 +303,16 @@
     gap: var(--space-md);
   }
 
-  .tier-miscellaneous .gem-footer {
-    margin-left: auto;
-    margin-top: 0;
-    width: auto;
-    padding-top: 0;
+  .tier-footer, .gem-footer {
+    margin-top: 0 !important; /* Force removal of auto margin */
+    padding-top: var(--space-xs) !important;
+    gap: 4px !important;
+  }
+
+  .gem-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px !important; /* Minimal gap between category and buttons */
   }
 
   /* Gem card elements */
@@ -333,12 +339,6 @@
   .gem-description {
     font-size: var(--font-size-xs);
     -webkit-line-clamp: 2;
-  }
-
-  .gem-footer {
-    flex-direction: column;
-    align-items: stretch;
-    gap: var(--space-sm);
   }
 
   .gem-btn-group {
