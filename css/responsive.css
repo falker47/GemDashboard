@@ -256,12 +256,12 @@
 
   /* Tier sections */
   .tier {
-    padding: var(--space-sm);
+    padding: var(--space-xs);
   }
 
   .tier-title {
     font-size: var(--font-size-xs);
-    margin-bottom: var(--space-xs);
+    margin-bottom: 2px;
   }
 
   .tier-icon {
@@ -271,7 +271,7 @@
   /* Gems row - horizontal scroll with snap */
   .gems-row {
     gap: var(--space-sm);
-    padding: var(--space-xs);
+    padding: 2px 4px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
   }
@@ -283,9 +283,18 @@
   .tier-miscellaneous .gem-card {
     min-width: 200px;
     max-width: 200px;
+    height: auto;
     scroll-snap-align: start;
+    padding: var(--space-sm);
   }
 
+  .tier-essentials .gem-card {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .tier-toolkit .gem-card {
+    padding: 4px 12px;
+  }
   /* Restore miscellaneous to row layout on mobile for better compactness */
   .tier-miscellaneous .gem-card {
     flex-direction: row;
@@ -308,9 +317,9 @@
   }
 
   .tier-essentials .gem-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 1.5rem;
+    width: 36px;
+    height: 36px;
+    font-size: 1.25rem;
   }
 
   .gem-name {
@@ -318,7 +327,7 @@
   }
 
   .tier-essentials .gem-name {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
   }
 
   .gem-description {
@@ -326,11 +335,29 @@
     -webkit-line-clamp: 2;
   }
 
+  .gem-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-sm);
+  }
+
+  .gem-btn-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 4px;
+  }
+
   /* Larger touch targets for buttons */
   .gem-copy-btn {
     min-height: 36px;
-    min-width: 36px;
+    width: 100%;
+    justify-content: center;
     padding: var(--space-xs) var(--space-sm);
+  }
+
+  .gem-btn-group .gem-copy-btn {
+    padding: var(--space-sm);
+    font-size: var(--font-size-sm);
   }
 
   /* Toast positioning */
