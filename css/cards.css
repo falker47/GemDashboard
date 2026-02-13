@@ -208,7 +208,7 @@
     flex-direction: row;
     align-items: center;
     gap: var(--space-md);
-    padding: var(--space-sm) var(--space-md);
+    padding: var(--space-md);
 }
 
 .tier-miscellaneous .gem-header {
