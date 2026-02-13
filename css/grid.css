@@ -35,24 +35,25 @@
 /* Tier Height Distribution - Hero is biggest, Archive is smallest */
 /* Reduced by half footer height each (X = Y = footer-height / 2) */
 .tier-essentials {
-    flex: 4.5;
-    /* 45% of available space */
-    height: calc((100% / 10.5 * 4.5) - (var(--footer-height) / 2));
+    flex: 5;
+    /* Increased and denominator updated to 11 */
+    height: calc((100% / 11 * 5) - (var(--footer-height) / 2));
     background: var(--gradient-hero), var(--glass-bg);
     border-color: rgba(255, 107, 53, 0.2);
 }
 
 .tier-toolkit {
-    flex: 3.5;
-    /* 35% of available space */
-    height: calc((100% / 10.5 * 3.5) - (var(--footer-height) / 2));
+    flex: 4;
+    /* Increased and denominator updated to 11 */
+    height: calc((100% / 11 * 4) - (var(--footer-height) / 2));
     background: var(--gradient-processor), var(--glass-bg);
     border-color: rgba(100, 149, 237, 0.15);
 }
 
 .tier-miscellaneous {
-    flex: 2.5;
-    /* 25% of available space */
+    flex: 2;
+    /* Increased and weight balanced */
+    height: calc((100% / 11 * 2) - (var(--footer-height) / 2));
     background: var(--gradient-archive), var(--glass-bg);
     border-color: rgba(100, 100, 120, 0.15);
 }
@@ -61,7 +62,7 @@
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-xs); /* Halved from space-sm */
     font-size: var(--font-size-sm);
     font-weight: 600;
     text-transform: uppercase;
