@@ -204,6 +204,18 @@
       "tier": "toolkit",
       "icon": "🏗️",
       "url": "https://gemini.google.com/gem/1hMhDiGgZQh6B2oHUjXwnGrp6RR6W9Wfu?usp=sharing"
+    },
+    {
+      "id": "email-generator",
+      "name": "Email generator",
+      "description": "Professional Email Transmuter - Convert raw input into polished professional emails",
+      "file": "prompts/email-generator.txt",
+      "category": "Utilities",
+      "is_private": false,
+      "work": "work",
+      "tier": "toolkit",
+      "icon": "📧",
+      "url": "https://gemini.google.com/gem/1H-e8KXVZjAl7Kcw96Na_jyrtV2DRtPnJ?usp=sharing"
     }
   ],
   "categories": [
