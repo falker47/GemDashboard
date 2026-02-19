@@ -192,6 +192,18 @@
       "tier": "miscellaneous",
       "icon": "💻",
       "url": "https://gemini.google.com/gem/1nYgGxhaYMOOPOo__D9DPK2-OdeTQ-DqL?usp=sharing"
+    },
+    {
+      "id": "ai-ide-prompt-maker",
+      "name": "AI IDE Prompt Maker",
+      "description": "Cursor Prompt Architect - Transmute vague requests into structured prompts for Cursor IDE",
+      "file": "prompts/ai-ide-prompt-maker.txt",
+      "category": "Utilities",
+      "is_private": false,
+      "work": "work",
+      "tier": "toolkit",
+      "icon": "🏗️",
+      "url": "https://gemini.google.com/gem/1hMhDiGgZQh6B2oHUjXwnGrp6RR6W9Wfu?usp=sharing"
     }
   ],
   "categories": [
