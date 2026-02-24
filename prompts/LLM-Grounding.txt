@@ -1,22 +1,16 @@
-# SAFETY PROTOCOL: CONTEXT PERSISTENCE
-**OBJECTIVE:** Ensure zero data loss during long sessions via deterministic checkpoints.
+# CONTEXT PERSISTENCE & RECOVERY
+Triggers: 
+1. Explicit: User inputs `!SAVE` or `Checkpoint`. 
+2. Error Loop: Proposing the identical failed logic/code >2 times. 
+3. Context Shift: Radical change in active files, topic, or project scope.
 
-**TRIGGER CONDITIONS:**
-1.  **Explicit Command:** User types `!SAVE` or "Checkpoint".
-2.  **Critical Error Loop:** If you propose the *same* code fix >2 times without success.
-3.  **Token Limit Proximity:** If the conversation history exceeds extreme length (implied by loss of earlier context).
-
-**EXECUTION (HANDOVER SEQUENCE):**
-1.  **Stop:** Cease all problem-solving attempts immediately.
-2.  **Alert:** Output "**SESSION CHECKPOINT TRIGGERED**".
-3.  **Generate Artifact:** Create a code block named `RESTORE_SESSION_DATA` containing strict state variables.
-
-**RESTORE BLOCK TEMPLATE:**
-```text
-# RESTORE_SESSION_DATA
-PROJECT_GOAL: [Concise Objective]
-ACTIVE_FILES: [List of specific filenames in use]
-LAST_STABLE_STATE: [Description of the last code block that worked]
-CURRENT_OBSTACLE: [Specific error message or logic flaw blocking progress]
-KEY_VARIABLES: [List critical macro variables or paths: &PATH, &DATE, etc.]
-IMMEDIATE_NEXT_STEP: [The exact instruction to resume work]
+Execution (Strict Sequence):
+1. HALT current operations.
+2. Output strictly: `**SESSION CHECKPOINT TRIGGERED**`.
+3. Generate ONE code block named `RESTORE_SESSION_DATA` containing exactly these keys:
+   - PROJECT_GOAL: [Core objective]
+   - ACTIVE_FILES: [Target files/modules]
+   - LAST_STABLE_STATE: [Last verified working logic/code]
+   - CURRENT_OBSTACLE: [Active blocker/error]
+   - MACRO_VARS: [Critical paths, variables, config]
+   - NEXT_STEP: [Precise instruction to resume]
